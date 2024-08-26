@@ -1,0 +1,14 @@
+*.exe
+*.dll
+*.so
+*.dylib
+
+/app
+/tmp
+
+vendor/
+
+.env
+
+/go.sum
+/go-build/
