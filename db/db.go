@@ -3,7 +3,6 @@ package db
 import (
 	"fmt"
 	"log"
-	"net/http"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -26,8 +25,6 @@ func Connect() {
     port := os.Getenv("DB_PORT")
     sslmode := os.Getenv("DB_SSLMODE")
 
-    portRun := os.Getenv("PORT")
-
     dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s",
         host, user, password, dbname, port, sslmode)
 
@@ -37,7 +34,6 @@ func Connect() {
     }
 
     DB = database
-    http.ListenAndServe(":" + portRun, nil)
 
     log.Println("Database connected successfully.")
 }
