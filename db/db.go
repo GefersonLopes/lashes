@@ -16,7 +16,7 @@ var DB *gorm.DB
 func Connect() {
     err := godotenv.Load()
     if err != nil {
-        log.Fatal("Error loading .env file")
+        log.Println("Runing without .env file in production")
     }
 
     host := os.Getenv("DB_HOST")
